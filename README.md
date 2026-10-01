@@ -84,6 +84,10 @@ Para guardar leads reales define `NEXT_PUBLIC_SUPABASE_URL` y `NEXT_PUBLIC_SUPAB
 - Fotografía: [Pexels](https://www.pexels.com).
 - HITO es ficticio. Los modelos pertenecen a sus marcas; autonomías WLTP aproximadas; precios, cuotas, cargadores y disponibilidad son de demostración.
 
+## Contacto
+
+¿Quieres una web así para tu negocio? Escríbeme por WhatsApp al **[975 118 790](https://wa.me/51975118790)**.
+
 ---
 
 Diseñado y desarrollado por [Daniel Yataco](https://github.com/danielyatacoblas).
