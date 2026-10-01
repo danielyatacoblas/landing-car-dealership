@@ -1,3 +1,5 @@
+import { waLink } from '@/lib/contact';
+
 export default function Footer() {
   return (
     <footer className="ft">
@@ -9,8 +11,8 @@ export default function Footer() {
         </div>
       </div>
       <div className="ft__legal">
-        <p>HITO es un concesionario ficticio creado para portafolio. Los modelos pertenecen a sus marcas; precios, cuotas, cargadores y disponibilidad son de demostración. Fotos: <a href="https://www.pexels.com" rel="noopener">Pexels</a>.</p>
-        <a className="badge" href="https://github.com/danielyatacoblas" rel="noopener">Diseñado y desarrollado por Daniel Yataco</a>
+        <p>Diseño demo: HITO es un concesionario ficticio. Los modelos pertenecen a sus marcas; precios, cuotas, cargadores y disponibilidad son de ejemplo. ¿Quieres una web así para tu negocio? Fotos: <a href="https://www.pexels.com" rel="noopener">Pexels</a>.</p>
+        <a className="badge" href={waLink('HITO (concesionario)')} target="_blank" rel="noopener">Diseño y desarrollo: Daniel Yataco · WhatsApp <span className="nowrap">975 118 790</span></a>
       </div>
     </footer>
   );

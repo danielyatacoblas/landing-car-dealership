@@ -2,6 +2,7 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { CARS } from '@/lib/cars';
 import { sb } from '@/lib/supabase';
+import Select from './Select';
 
 const SLOTS = ['09:00', '10:30', '12:00', '15:00', '16:30', '18:00'];
 type Errors = Partial<Record<'name' | 'phone' | 'day' | 'slot', string>>;
@@ -75,12 +76,7 @@ export default function TestDrive({ carId }: { carId: string }) {
             <input name="phone" inputMode="numeric" autoComplete="tel-national" placeholder="9XX XXX XXX" aria-invalid={!!errors.phone} aria-describedby="e-phone" />
             <small id="e-phone" className="err">{errors.phone}</small>
           </label>
-          <label className="field field--light td__wide">
-            <span>Modelo</span>
-            <select value={model} onChange={(e) => setModel(e.target.value)}>
-              {CARS.map((c) => <option key={c.id} value={c.id}>{c.make} {c.model}</option>)}
-            </select>
-          </label>
+          <Select className="td__wide" label="Modelo" value={model} onChange={setModel} options={CARS.map((c) => ({ value: c.id, label: `${c.make} ${c.model}` }))} />
           <fieldset className="field field--light td__wide" aria-describedby="e-day">
             <legend>Día</legend>
             <div className="days">

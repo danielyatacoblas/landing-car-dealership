@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { CARS, type Body, type Car } from '@/lib/cars';
 import { installment } from '@/lib/finance';
 import { gsap, reduced } from '@/lib/motion';
+import Select from './Select';
 
 const BODIES: Array<'Todos' | Body> = ['Todos', 'SUV', 'Crossover', 'Sedán'];
 type Sort = 'range' | 'price-asc' | 'price-desc';
@@ -62,14 +63,13 @@ export default function Inventory({ selected, onSimulate, onFinance }: {
               <button key={b} type="button" className="chip" aria-pressed={body === b} onClick={() => setBody(b)}>{b}</button>
             ))}
           </div>
-          <label className="select">
-            <span>Ordenar</span>
-            <select value={sort} onChange={(e) => setSort(e.target.value as Sort)}>
-              <option value="range">Mayor autonomía</option>
-              <option value="price-asc">Menor precio</option>
-              <option value="price-desc">Mayor precio</option>
-            </select>
-          </label>
+          <Select
+            className="sel--sort"
+            label="Ordenar por"
+            value={sort}
+            onChange={(v) => setSort(v as Sort)}
+            options={[{ value: 'range', label: 'Mayor autonomía' }, { value: 'price-asc', label: 'Menor precio' }, { value: 'price-desc', label: 'Mayor precio' }]}
+          />
         </div>
       </div>
 
