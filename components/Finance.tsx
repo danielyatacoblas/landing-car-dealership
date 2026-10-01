@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { CARS } from '@/lib/cars';
 import { installment } from '@/lib/finance';
 import { gsap, reduced } from '@/lib/motion';
+import Select from './Select';
 
 const TERMS = [24, 36, 48, 60];
 const usd = (n: number) => `US$ ${n.toLocaleString('en-US')}`;
@@ -39,12 +40,7 @@ export default function Finance({ carId, onCar }: { carId: string; onCar: (id: s
       <div className="fin__body">
         <h2 id="fin-title">Tu cuota, sin llamar a nadie</h2>
         <form className="fin__form" onSubmit={(e) => e.preventDefault()}>
-          <label className="field field--light">
-            <span>Auto</span>
-            <select value={carId} onChange={(e) => onCar(e.target.value)}>
-              {CARS.map((c) => <option key={c.id} value={c.id}>{c.make} {c.model} · {usd(c.price)}</option>)}
-            </select>
-          </label>
+          <Select label="Auto" value={carId} onChange={onCar} options={CARS.map((c) => ({ value: c.id, label: `${c.make} ${c.model}`, hint: usd(c.price) }))} />
           <label className="field field--light">
             <span>Cuota inicial: <b className="tnum">{down} % · {usd(r.down)}</b></span>
             <input type="range" min={10} max={60} step={5} value={down} onChange={(e) => setDown(Number(e.target.value))} />

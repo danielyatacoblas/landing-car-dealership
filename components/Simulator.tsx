@@ -3,6 +3,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { CARS } from '@/lib/cars';
 import { ROUTES, RESERVE, simulate, formatDuration, type Options } from '@/lib/range';
 import { gsap, reduced } from '@/lib/motion';
+import Select from './Select';
 
 function useWidth<T extends HTMLElement>() {
   const ref = useRef<T>(null);
@@ -88,12 +89,7 @@ export default function Simulator({ carId, routeId, onCar, onRoute }: {
 
       <div className="sim__grid">
         <form className="sim__controls" onSubmit={(e) => e.preventDefault()} aria-label="Datos del viaje">
-          <label className="field">
-            <span>Auto</span>
-            <select value={carId} onChange={(e) => onCar(e.target.value)}>
-              {CARS.map((c) => <option key={c.id} value={c.id}>{c.make} {c.model} · {c.range} km</option>)}
-            </select>
-          </label>
+          <Select className="sel--dark" label="Auto" value={carId} onChange={onCar} options={CARS.map((c) => ({ value: c.id, label: `${c.make} ${c.model}`, hint: `${c.range} km de autonomía` }))} />
 
           <fieldset className="field">
             <legend>Destino desde Lima</legend>
