@@ -8,7 +8,7 @@ const overpass = Overpass({ subsets: ['latin'], variable: '--font-sign', display
 export const metadata: Metadata = {
   metadataBase: new URL('https://landing-car-dealership-danielyatacoblas-projects.vercel.app'),
   title: 'HITO — Autos eléctricos que llegan a donde vas',
-  description: 'Concesionario de autos eléctricos en Lima. Simula tu ruta por la Panamericana, calcula tu cuota y agenda un test drive. Demo de portafolio de Daniel Yataco.',
+  description: 'Concesionario de autos eléctricos en Lima. Simula tu ruta por la Panamericana, calcula tu cuota y agenda un test drive. Diseño demo de Daniel Yataco · WhatsApp 975 118 790.',
   openGraph: { title: 'HITO — Autos eléctricos que llegan', description: '¿Llegas a Paracas sin cargar? Simúlalo.', images: ['/img/hero.jpg'] },
 };
 
