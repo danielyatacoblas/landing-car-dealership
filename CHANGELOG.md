@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.1.1
+- Capturas del README actualizadas a la versión actual.
+
 ## v1.1.0
 - Listas desplegables propias, accesibles con teclado, con el diseño de la marca.
 - El fondo ya no se desplaza cuando hay un modal o panel abierto.
